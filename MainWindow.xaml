@@ -1,0 +1,44 @@
+﻿<Window x:Class="ONIT_Kursov_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ONIT_Kursov_3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="462.437" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <Canvas>
+                <Menu x:Name="ElementMenu" DockPanel.Dock="Top" Height="20" Width="200" Background="#2b579a">
+                    <MenuItem Header="Tables" Width="60" Foreground="White" FontSize="14" >
+                        <MenuItem Header="Categories" Foreground="Black" Click="ShowCategoriesTable"/>
+                        <MenuItem Header="CustomerDemographics" Foreground="Black" Click="ShowCustomerDemographicsTable"/>
+                        <MenuItem Header="Customers" Foreground="Black" Click="ShowCustomersTable"/>
+                        <MenuItem Header="Employees" Foreground="Black" Click="ShowEmployeesTable"/>
+                        <MenuItem Header="EmployeeTerritories" Foreground="Black" Click="ShowEmployeeTerritoriesTable"/>
+                        <MenuItem Header="OrderDetails" Foreground="Black" Click="ShowOrderDetailsTable"/>
+                        <MenuItem Header="Orders" Foreground="Black" Click="ShowOrdersTable"/>
+                        <MenuItem Header="Products" Foreground="Black" Click="ShowProductsTable"/>
+                        <MenuItem Header="Region" Foreground="Black" Click="ShowRegionTable"/>
+                        <MenuItem Header="Shippers" Foreground="Black" Click="ShowShippersTable"/>
+                        <MenuItem Header="Suppliers" Foreground="Black" Click="ShowSuppliersTable"/>
+                        <MenuItem Header="Territories" Foreground="Black" Click="ShowTerritoriesTable"/>
+                    </MenuItem>
+                    <MenuItem Header="Export ..." Width="80" Foreground="White" FontSize="14">
+                        <MenuItem Header="Export excel" Foreground="Black" Click="ExcelExport"/>
+                    </MenuItem>
+                </Menu>
+                <Label Name="labelTableName" Canvas.Top="30" FontSize="18" Content="Categories" Canvas.Left="20"></Label>
+                <DataGrid Canvas.Left="20" Canvas.Top="80" AutoGenerateColumns="True" Height="340" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" x:Name="gridTable" HorizontalAlignment="Left" Width="auto" RenderTransformOrigin="0.5,0.5" CanUserAddRows="False" IsReadOnly="False">
+                    <DataGrid.RowStyle>
+                        <Style TargetType="{x:Type DataGridRow}">
+                        </Style>
+                    </DataGrid.RowStyle>
+                </DataGrid>
+            </Canvas>
+        </DockPanel>
+    </Grid>
+</Window>
